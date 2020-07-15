@@ -69,6 +69,7 @@
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
+    <Compile Include="Assets\Scripts\CameraViewSwitcher.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <None Include="Assets\Universal Sound FX\#Game Genre References\Platform.txt" />
