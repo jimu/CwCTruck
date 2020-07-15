@@ -35,10 +35,10 @@ public class FollowPlayer : MonoBehaviour
     private View[] views = new[] {
         new View("FollowCam",   0, 4,-7,       "Player"),
         new View("Dashboard",   0, 2.2f, 0.5f, "Player", true, true),
-        new View("Birdseye",    0,50, 0,       "Road", false),
+        new View("Birdseye",    0,80, 0,       "Road", false),
         new View("CinemaCam",  10, 1, 10,     "Player", false),   // 10 units away from road, 10 units ahead of player, track but do not follow 
         new View("Opponent",    0, 4, -7,      "Enemy"),           // follow enemy
-        new View("KittyCam",    2, 1, 2,       "Kitty", false)
+        new View("KittyCam",    -3, 2, -4f,       "Kitty", true)
     };
     
     private void Awake()
