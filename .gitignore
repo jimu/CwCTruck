@@ -1,0 +1,10 @@
+Temp
+Assets/Universal Sound FX*
+Build/
+Library*
+Logs
+obj
+Plugins
+*.swp
+*~
+.vs
