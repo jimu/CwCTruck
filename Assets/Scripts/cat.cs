@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
 
 public class cat : MonoBehaviour
@@ -13,26 +14,20 @@ public class cat : MonoBehaviour
         if (Random.value < 0.6)
             anim.SetBool("isSleeping", true);
 
+        StartCoroutine(ChangeAnimation());
     }
 
     IEnumerator ChangeAnimation()
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(1.0f, 3.0f));
+            yield return new WaitForSeconds(Random.Range(5.0f, 12.0f));
             float r = Random.value;
-            anim.SetBool("isSleeping", r < 0.33f );
-            anim.SetBool("isIdling",  r >= 0.33f && r < 0.66f);
-            anim.SetBool("isWalking", r >= 0.66f);
-            
+            anim.SetBool("isSleeping", r < 0.5f );
+            anim.SetBool("isIdling",  r >= 0.5);
+            //anim.SetBool("isWalking", r >= 0.66f);
+            //Debug.Log("Change cat: r=" + r);
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Random.value < 0.05)
-        if (Input.GetKeyDown(KeyCode.I))
-            anim.SetBool("isSleeping", true);
-    }
 }

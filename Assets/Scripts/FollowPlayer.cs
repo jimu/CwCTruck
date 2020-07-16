@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using TMPro;
 
 public struct View
 {
@@ -28,22 +29,29 @@ public class FollowPlayer : MonoBehaviour
     public Vector3 offset;
     private int currentViewIndex = 0;
     // TODO private Transform viewTarget;
-    private GameObject lookat;
-    public bool followTarget;
+    [SerializeField] private GameObject lookat;
+    [SerializeField] public bool followTarget;
     View currentView;
+    [SerializeField] private TextMeshProUGUI viewText;
+    [SerializeField] private TextMeshProUGUI viewTextShadow;
 
     private View[] views = new[] {
-        new View("FollowCam",   0, 4,-7,       "Player"),
+        new View("Follow",   0, 4,-7,          "Player"),
         new View("Dashboard",   0, 2.2f, 0.5f, "Player", true, true),
-        new View("Birdseye",    0,80, 0,       "Road", false),
-        new View("CinemaCam",  10, 1, 10,     "Player", false),   // 10 units away from road, 10 units ahead of player, track but do not follow 
+        new View("BirdsEye",    0,80, 0,       "Road",   false),
+        new View("CinemaCam",  10, 1, 10,      "Player", false),   // 10 units away from road, 10 units ahead of player, track but do not follow 
         new View("Opponent",    0, 4, -7,      "Enemy"),           // follow enemy
-        new View("KittyCam",    -3, 2, -4f,       "Kitty", true)
+        new View("KittyCam",    0,0,0,         "Kitty",  false, false)
     };
     
-    private void Awake()
+    private void Start()
     {
         SetView(0);
+    }
+
+    private void Update()
+    {
+        transformCamera();
     }
     void LateUpdate()
     {
@@ -53,13 +61,6 @@ public class FollowPlayer : MonoBehaviour
             SetView(0);
 
         transformCamera();
-        /*
-        transform.rotation = player.transform.rotation;
-        transform.position = player.transform.position;
-        transform.Translate(offset);
-        transform.LookAt(player.transform);
-        */
-
     }
 
     void transformCamera(bool forceFollowTarget = false)
@@ -82,7 +83,6 @@ public class FollowPlayer : MonoBehaviour
         currentViewIndex = indexView;
 
         // skip views with non-existant targets
-        ;
         while ((lookat = GameObject.FindGameObjectWithTag(views[currentViewIndex].targetTag)) == null)
             currentViewIndex = (currentViewIndex + 1) % views.Length;
 
@@ -92,6 +92,9 @@ public class FollowPlayer : MonoBehaviour
         followTarget = v.followTarget;
         transformCamera(true);
         Debug.Log("SetView(" + currentViewIndex + ", " + v.name + ") ALF=" + v.alwaysLookForward);
+        viewText.text = v.name;
+        viewTextShadow.text = v.name;
+
     }
 }
 
