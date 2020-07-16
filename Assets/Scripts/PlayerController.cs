@@ -12,6 +12,12 @@ public class PlayerController : MonoBehaviour
     public float handbreakDecelleration = 12f;
     public float turnSpeed = 30f;
 
+    GameObject fpsCounterPanel = null;
+
+    private void Awake()
+    {
+        fpsCounterPanel = GameObject.FindGameObjectWithTag("FPS");
+    }
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -27,6 +33,8 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         if (Input.GetKeyDown(KeyCode.P))
             Time.timeScale = Time.timeScale > 0f ? 0f : 1f;
+        if (Input.GetKeyDown(KeyCode.F))
+            fpsCounterPanel.SetActive(!fpsCounterPanel.activeSelf);
 
         // slow forward or backward velocity
         if (Input.GetKey(KeyCode.Space))

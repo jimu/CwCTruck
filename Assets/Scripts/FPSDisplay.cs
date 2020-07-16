@@ -9,7 +9,7 @@ public class FPSDisplay : MonoBehaviour
     FPSCounter fpsCounter;
     
     [SerializeField]
-    private FPSColor[] coloring;
+    private FPSColor[] coloring = null;
 
     static string[] stringsFrom00To99 = {
         "00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
