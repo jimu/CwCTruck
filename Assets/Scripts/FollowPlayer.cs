@@ -32,8 +32,8 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField] private GameObject lookat;
     [SerializeField] public bool followTarget;
     View currentView;
-    [SerializeField] private TextMeshProUGUI viewText;
-    [SerializeField] private TextMeshProUGUI viewTextShadow;
+    [SerializeField] private TextMeshProUGUI viewText = null;
+    [SerializeField] private TextMeshProUGUI viewTextShadow = null;
 
     private View[] views = new[] {
         new View("Follow",   0, 4,-7,          "Player"),

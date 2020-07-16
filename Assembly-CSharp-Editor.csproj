@@ -64,10 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\PathCreator\Examples\Scripts\Editor\PathSceneToolEditor.cs" />
-    <Compile Include="Assets\polyperfect\Common\Wander Script\Editor\Common_StatsTable.cs" />
-    <Compile Include="Assets\polyperfect\Common\Wander Script\Editor\Common_WanderManagerEditor.cs" />
-    <Compile Include="Assets\polyperfect\Common\Wander Script\Editor\Common_WanderScriptEditor.cs" />
-    <Compile Include="Assets\polyperfect\Low Poly Animated Animals\- Scripts\Wander Script\Editor\Animals_WanderScriptEditor.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

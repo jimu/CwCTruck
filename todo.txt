@@ -1,0 +1,33 @@
+# vim: ts=2 sw=2 nowrap
+
+TODO
+x A   - camera follow
+  A   - player controls
+
+  C   - Other cars should avoid or impact obsacles
+  A   - ai dodge
+  B1  - Mute button
+  B   - adjust path following on collision
+  B   - breaks
+  B   - full screen
+  B   - grunge menu
+  B   - knock enemies off road
+  B   - sound
+  B   - speedometer
+  B   - split screen MP
+  C   - crap flying off the back of the truck (particles)
+  C   - cartoonize the cars
+  C   - fuel
+  C   - gears
+  C   - power up
+  C   - replace road texture
+  C   - terrain
+  C   - true MP
+  C   - upgrades
+  C   - weapons
+  C   - Update path creator library
+  
+      - Host on itch.io
+        https://stackoverflow.com/questions/60048419/how-to-increase-the-size-of-unity-webgl-game-window-on-itch-io
+
+x B   - alternative hosting
